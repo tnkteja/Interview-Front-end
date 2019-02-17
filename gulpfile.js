@@ -22,6 +22,10 @@ gulp.task('twig', () => {
     .pipe(gulp.dest('dist'));
 });
 
+gulp.task('default', function() {
+  return gulp.src('src/img/**.*').pipe(gulp.dest('dist'));
+});
+
 gulp.task('sass', () => {
   return gulp
     .src('src/sass/**/*.scss')
@@ -70,7 +74,7 @@ gulp.task('browsersync', () => {
 });
 
 gulp.task('lint', ['stylelint', 'eslint']);
-gulp.task('build', ['sass', 'twig', 'babel']);
+gulp.task('build', ['default', 'sass', 'twig', 'babel']);
 gulp.task('server', ['browsersync']);
 
 gulp.task('default', ['lint', 'build']);
