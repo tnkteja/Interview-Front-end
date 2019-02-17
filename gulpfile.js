@@ -14,13 +14,17 @@ gulp.task('twig', () => {
   return gulp
     .src('src/templates/*.html.twig')
     .pipe(twig())
+    .on('error', function(err) {
+      process.stderr.write(err.message + '\n');
+      this.emit('end');
+    })
     .pipe(rename('index.html'))
     .pipe(gulp.dest('dist'));
 });
 
 gulp.task('sass', () => {
   return gulp
-    .src('src/sass/*.scss')
+    .src('src/sass/**/*.scss')
     .pipe(glob())
     .pipe(
       sass({
@@ -60,13 +64,13 @@ gulp.task('browsersync', () => {
     }
   });
   gulp.watch(
-    ['src/sass/**/*.scss', 'src/js/*.js'],
+    ['src/sass/**/*.scss', 'src/js/*.js', 'src/templates/*.twig'],
     ['build', browserSync.reload]
   );
 });
 
 gulp.task('lint', ['stylelint', 'eslint']);
-gulp.task('build', ['twig', 'sass', 'babel']);
+gulp.task('build', ['sass', 'twig', 'babel']);
 gulp.task('server', ['browsersync']);
 
 gulp.task('default', ['lint', 'build']);

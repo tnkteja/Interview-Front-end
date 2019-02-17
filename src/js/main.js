@@ -1,3 +1,1 @@
-(function global() {
-  // console.log('JS');
-})();
+(function global() {})();

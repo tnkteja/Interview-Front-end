@@ -1,11 +1,293 @@
 @import 'config/**/*.scss';
+@import 'variables-partial';
+@import 'base-partial.scss';
+@import 'layout-partial.scss';
+@import 'modules/button-partial.scss';
+@import 'modules/menu-partial.scss';
+@import 'modules/input-partial.scss';
 
-html {
-  height: 100%;
-  font-size: 16px;
+.company-logo {
+  position: relative;
+  float: left;
+  @media screen and (max-width: $mobile_breakpoint) {
+    right: 30vw;
+  }
 }
 
-body {
-  font-size: 100%;
+/* disabe bootstrap collapsing animation */
+.collapsing {
+  -webkit-transition: none;
+  transition: none;
+  display: none;
+}
+
+@media screen and (max-width: $mobile_breakpoint) {
+  .menu {
+    display: none;
+  }
+  .menu-items {
+    position: absolute;
+    padding: 0px;
+    top: 69px;
+    left: 0px;
+    z-index: 1;
+    width: 100vw;
+  }
+  .mobile {
+    display: block;
+  }
+
+  .submenu-items {
+    display: block;
+    /* list-style: none; */
+    /* padding: 0px; */
+    width: 100vw;
+    left: -32px !important;
+    position: relative !important;
+  }
+}
+
+.submenu-items {
+  display: none;
+  background-color: #181514 !important;
+  border-top: 5px solid #f03b00 !important;
+  /* right: -4px; */
+  top: 10px;
+}
+
+.menu-item:active .submenu-items {
   display: flex;
+  flex-direction: column;
+}
+
+.submenu-item {
+  /* Style for "Our Story" */
+  color: #afa5a3 !important;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 400 !important;
+  line-height: 36px !important;
+  padding: 8px 0px 8px 48px !important;
+}
+
+.landing-banner-service {
+  margin: 16px;
+  border: 1px solid #000000;
+  display: inline-block;
+  padding: 32px;
+  @media screen and (max-width: $mobile_breakpoint) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}
+
+.landing-banner-service-container {
+  display: flex;
+  justify-content: space-around;
+  @media screen and (max-width: $mobile_breakpoint) {
+    display: block;
+  }
+}
+
+.landing-banner-service-name {
+  position: relative;
+  vertical-align: middle;
+  padding: 0px 0px 16px 0px;
+}
+.landing-banner-service-name-label {
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  position: relative;
+  @media screen and (max-width: $mobile_breakpoint) {
+    display: inline-block;
+    padding: 0px 0px 0px 20px;
+  }
+}
+
+.integer-bibendum {
+  /* Style for "Integer bi" */
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 36px;
+  font-weight: 500;
+  padding-top: 127px;
+  position: relative;
+}
+
+@import 'modules/success-stories-partial.scss';
+
+.about-other {
+  width: 545px;
+  @media screen and (max-width: $mobile_breakpoint) {
+    width: 100%;
+  }
+}
+.about__img {
+  float: right;
+  /* Style for "Layer 26" */
+  width: 600px;
+  height: 335px;
+  @media screen and (max-width: $mobile_breakpoint) {
+    width: inherit;
+    height: inherit;
+  }
+}
+
+.about__heading {
+  /* Style for "Mauris id" */
+  color: #484340;
+  font-family: 'Montserrat - Semi Bold', sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+}
+.about__text {
+  /* Style for "In maximus" */
+  color: #484340;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.testimony-text-icon {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.testimony-flex {
+  display: flex;
+  overflow-x: scroll;
+  @media screen and (max-width: $mobile_breakpoint) {
+    flex-direction: column;
+  }
+}
+.testimony {
+  margin: 36px;
+}
+
+.testimony-heading {
+  /* Style for "Testimonia" */
+  color: #484340;
+  font-family: 'Montserrat - Semi Bold', sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  width: 100%;
+}
+
+.testimony-client-icon {
+  float: left;
+}
+.testimony-client-name {
+  /* Style for "CLIENT NAM" */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  /* Text style for "Position," */
+}
+.testimony-client-position {
+  color: #484340;
+  font-family: 'Montserrat - Regular', sans-serif;
+  font-weight: 400;
+}
+.testimony-text-container {
+  color: #81736f;
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+  font-style: italic;
+  background: url('./Rounded_Rectangle_2.svg') no-repeat;
+  background-size: contain;
+  width: 373px;
+  padding-top: 57%;
+  position: relative;
+  @media screen and (max-width: $mobile_breakpoint) {
+    width: 100%;
+  }
+}
+
+.testimony-text {
+  position: absolute;
+  top: 0;
+  /* left: 0; */
+  /* right: 0; */
+  padding: 24px;
+}
+
+// .testimony-text:after
+// {
+// content: "";
+// position: relative;
+//     bottom: 40px;
+//     left: 48px;
+// border-style: solid;
+// border-width: 25px 25px 0;
+// border-color: #ffffff transparent;
+// display: block;
+// width: 0;
+// z-index: 1;
+// }
+
+.getintouch-heading {
+  /* Style for "Convinced" */
+  color: #ffffff;
+  font-family: 'Montserrat - Semi Bold', sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+}
+.getintouch-text {
+  /* Style for "Company ha" */
+  color: #ffffff;
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+}
+.getintouch-name-email-number {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px;
+  @media screen and (max-width: $mobile_breakpoint) {
+    flex-direction: column;
+  }
+}
+
+.messageinbrief {
+  /* Style for "Rounded Re" */
+  height: 105px;
+  width: 100%;
+  border-radius: 2px;
+  border: 1px solid #babbbc;
+  /* Style for "Message in" */
+  color: #81736f;
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+  padding: 10px;
+}
+
+.bottom-left {
+  float: left;
+  padding: 10px;
+  position: relative;
+  bottom: 16px;
+  @media screen and (max-width: $mobile_breakpoint) {
+    float: none;
+  }
+}
+.bottom-right {
+  float: right;
+  padding: 10px;
+  position: relative;
+  bottom: 16px;
+  @media screen and (max-width: $mobile_breakpoint) {
+    float: none;
+  }
+}
+
+.bottom-followuson-shape {
+  vertical-align: middle;
+  padding: 2px;
 }
