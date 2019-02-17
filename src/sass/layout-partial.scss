@@ -15,6 +15,9 @@
   height: 698px;
   background: url('./Layer_1.png');
   background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 #success-stories {
