@@ -22,7 +22,7 @@ gulp.task('twig', () => {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('default', function() {
+gulp.task('img', function() {
   return gulp.src('src/img/**.*').pipe(gulp.dest('dist'));
 });
 
@@ -74,7 +74,7 @@ gulp.task('browsersync', () => {
 });
 
 gulp.task('lint', ['stylelint', 'eslint']);
-gulp.task('build', ['default', 'sass', 'twig', 'babel']);
+gulp.task('build', ['img', 'sass', 'twig', 'babel']);
 gulp.task('server', ['browsersync']);
 
 gulp.task('default', ['lint', 'build']);
