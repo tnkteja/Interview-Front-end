@@ -21,29 +21,6 @@
   display: none;
 }
 
-@media screen and (max-width: $mobile_breakpoint) {
-  .menu {
-    position: absolute;
-    padding: 0px;
-    top: 69px;
-    left: 0px;
-    z-index: 1;
-    width: 100vw;
-  }
-  .mobile {
-    display: block;
-  }
-
-  .submenu {
-    display: block;
-    /* list-style: none; */
-    /* padding: 0px; */
-    width: 100vw;
-    left: -32px !important;
-    position: relative !important;
-  }
-}
-
 .submenu {
   display: none;
   background-color: #181514 !important;
@@ -72,12 +49,6 @@
   border: 1px solid #000000;
   display: inline-block;
   padding: 32px;
-  @media screen and (max-width: $mobile_breakpoint) {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-  }
 }
 
 .landing-banner-service-container {
@@ -150,23 +121,23 @@
   line-height: 24px;
 }
 
-.testimony-text-icon {
+.testimony__text-icon {
   vertical-align: middle;
   margin-right: 10px;
 }
 
-.testimony-flex {
+.testimony {
   display: flex;
   overflow-x: scroll;
   @media screen and (max-width: $mobile_breakpoint) {
     flex-direction: column;
   }
 }
-.testimony {
+.testimony__container {
   margin: 36px;
 }
 
-.testimony-heading {
+.testimony__heading {
   /* Style for "Testimonia" */
   color: #484340;
   font-family: 'Montserrat - Semi Bold', sans-serif;
@@ -175,10 +146,10 @@
   width: 100%;
 }
 
-.testimony-client-icon {
+.testimony__client-icon {
   float: left;
 }
-.testimony-client-name {
+.testimony__client-name {
   /* Style for "CLIENT NAM" */
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
@@ -186,12 +157,12 @@
   line-height: 20px;
   /* Text style for "Position," */
 }
-.testimony-client-position {
+.testimony__client-position {
   color: #484340;
   font-family: 'Montserrat - Regular', sans-serif;
   font-weight: 400;
 }
-.testimony-text-container {
+.testimony__text-container {
   color: #81736f;
   font-family: Montserrat, sans-serif;
   font-size: 18px;
@@ -206,7 +177,7 @@
   }
 }
 
-.testimony-text {
+.testimony__text {
   position: absolute;
   top: 0;
   /* left: 0; */
@@ -214,7 +185,7 @@
   padding: 24px;
 }
 
-// .testimony-text:after
+// .testimony__text:after
 // {
 // content: "";
 // position: relative;
