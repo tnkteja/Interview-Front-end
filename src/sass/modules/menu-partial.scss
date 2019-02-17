@@ -1,6 +1,6 @@
 @import '../variables-partial.scss';
 
-.menu-item {
+.menu__item {
   /* Style for "Blog" */
   color: #afa5a3;
   cursor: pointer;
@@ -17,7 +17,7 @@
   line-height: 40px;
 }
 
-.menu-item-carret {
+.menu__item-carret {
   position: relative;
   /* padding: 0px 0px 2px 2px; */
   background: url(./Carret_copy.svg);
@@ -28,7 +28,7 @@
   left: 3px;
 }
 
-li.menu-item:hover {
+li.menu__item:hover {
   color: white;
 }
 
@@ -44,6 +44,6 @@ li.menu-item:hover {
   outline: none;
 }
 
-.menu-items.collapsing ~ .menu-icon {
+.menu.collapsing ~ .menu-icon {
   background: url(./close.png) no-repeat;
 }
